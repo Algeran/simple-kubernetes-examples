@@ -12,6 +12,6 @@ public class DemoController {
 
     @GetMapping("/info")
     public AppInfoDTO getAppInfo() throws UnknownHostException {
-        return new AppInfoDTO("version 1", InetAddress.getLocalHost().getHostName());
+        return new AppInfoDTO("version 2", InetAddress.getLocalHost().getHostName());
     }
 }

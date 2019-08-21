@@ -30,6 +30,6 @@ spec:
     spec:
       containers:
         - name: kube-demo-container
-          image: kube-demo-image:0.0.1
+          image: kube-demo-image:0.0.2
           ports:
             - containerPort: 8080

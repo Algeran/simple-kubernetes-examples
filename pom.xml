@@ -10,7 +10,7 @@
     </parent>
     <groupId>ru.alfastrah.api</groupId>
     <artifactId>kube-demo</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <name>kube-demo</name>
     <description>Demo project for kubernetes application</description>
 
