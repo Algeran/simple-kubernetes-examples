@@ -17,7 +17,7 @@ kind: Deployment
 metadata:
   name: demo-kube-deployment
 spec:
-  replicas: 1
+  replicas: 5
   selector:
     matchLabels:
       app: demo-kube-label
