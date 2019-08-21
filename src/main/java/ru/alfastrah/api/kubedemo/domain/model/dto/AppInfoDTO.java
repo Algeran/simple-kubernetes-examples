@@ -1,12 +1,17 @@
 package ru.alfastrah.api.kubedemo.domain.model.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-@Getter
-@RequiredArgsConstructor
+@ToString
+@Getter @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class AppInfoDTO {
 
-    private final String appVersion;
-    private final String hostName;
+    private String appVersion;
+    private String hostName;
 }

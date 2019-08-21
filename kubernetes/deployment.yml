@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: demo-kube-service
+  name: demo-kube-service-v1
 spec:
   type: NodePort
   ports:
@@ -11,7 +11,22 @@ spec:
   selector:
     app: demo-kube-label
     bar: foo
-    version: 0.0.2
+    version: 0.0.1
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-kube-service-v3
+spec:
+  type: NodePort
+  ports:
+    - port: 8083
+      name: http
+      targetPort: 8080
+  selector:
+    app: demo-kube-label
+    bar: foo
+    version: 0.0.3
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -40,23 +55,23 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: demo-kube-deployment-v2
+  name: demo-kube-deployment-v3
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: demo-kube-label
       bar: foo
-      version: 0.0.2
+      version: 0.0.3
   template:
     metadata:
       labels:
         app: demo-kube-label
         bar: foo
-        version: 0.0.2
+        version: 0.0.3
     spec:
       containers:
         - name: kube-demo-container
-          image: kube-demo-image:0.0.2
+          image: kube-demo-image:0.0.3
           ports:
             - containerPort: 8080
